@@ -2,36 +2,18 @@
   "customize": {
     "extra_dir": "",
     "install_env": {
-      "CMAKE_CONFIG": "Release",
+      "CMAKE_CONFIG": "install",
       "PACKAGE_BUILD_TYPE": "cmake",
-      "BUILD_LAPACKE" : "NO",
-      "BUILD_SHARED_LIBS" : "OFF",
-      "FILE_EXT_LINUX": ".a",
-      "PACKAGE_URL": "https://github.com/Reference-LAPACK/lapack/archive/refs/tags",
-      "*PACKAGE_CONFIGURE_FLAGS": "-DLAPACKE=$<<BUILD_LAPACKE>>$ -DBUILD_SHARED_LIBS=$<<BUILD_SHARED_LIBS>>$",
-      "PACKAGE_CONFIGURE_FLAGS_ANDROID": "",
-      "PACKAGE_CONFIGURE_FLAGS_LINUX": "",
-      "PACKAGE_CONFIGURE_FLAGS_WINDOWS": "",
-      "PACKAGE_WGET": "YES",
-      "PACKAGE_WGET_EXTRA": "--no-cookies",
+      "PACKAGE_UNZIP": "YES",
+      "PACKAGE_URL": "https://gitlab.com/libeigen/eigen",
       "PACKAGE_RENAME": "YES",
       "PACKAGE_SKIP_CLEAN_INSTALL": "NO",
-      "PACKAGE_SKIP_CLEAN_OBJ": "NO",
+      "PACKAGE_SKIP_CLEAN_OBJ": "YES",
       "PACKAGE_SKIP_CLEAN_SRC_DIR": "NO",
-      "PACKAGE_UNZIP": "YES",
-      "PACKAGE_UNZIP_SKIP_ERROR": "YES"
-    },
-    "version": "3.7.1"
+      "PACKAGE_UNZIP": "YES"
+    }
   },
-  "end_full_path": {
-    "linux": "install/lib/liblapack$<<FILE_EXT_LINUX>>$"
-  },
-  "only_for_host_os_tags": [
-    "linux"
-  ],
-  "only_for_target_os_tags": [
-    "linux"
-  ],
+  "end_full_path_universal": "install$#sep#$share$#sep#$eigen3$#sep#$cmake$#sep#$Eigen3Config.cmake",
   "deps": {
     "cmake": {
       "force_target_as_host": "yes",
@@ -49,8 +31,8 @@
   },
   "need_cpu_info": "yes",
   "process_script": "install",
-  "soft_uoa": "lib.lapack",
-  "suggested_path": "lib-lapack",
+  "suggested_path": "lib-eigen",
+  "soft_uoa": "lib.eigen.headers",
   "use_preprocess_scripts_from_another_entry": {
     "data_uoa": "fd44428fbc77f77f",
     "module_uoa": "84e27ad9dd12e734"
@@ -61,7 +43,8 @@
   },
   "tags": [
     "lib",
-    "lapack",
+    "eigen",
+    "headers",
     "channel-stable"
   ],
   "variations": {
@@ -70,7 +53,7 @@
         "PACKAGE_GIT": "YES",
         "PACKAGE_SUB_DIR": "src",
         "PACKAGE_SUB_DIR1": "src",
-        "PACKAGE_URL": "https://github.com/Reference-LAPACK/lapack",
+        "PACKAGE_URL": "https://gitlab.com/libeigen/eigen",
         "PACKAGE_UNZIP": "NO",
         "PACKAGE_UNZIP_SKIP_ERROR": "YES",
         "PACKAGE_WGET": "NO",
@@ -85,28 +68,28 @@
         "vmaster"
       ]
     },
-    "lapacke": {
-      "extra_env": {
-        "BUILD_LAPACKE" : "YES"
-      }
-    },
     "shared": {
       "extra_env": {
         "BUILD_SHARED_LIBS" : "ON",
         "FILE_EXT_LINUX": ".so"
       }
     },
-    "v3.7.1": {
+    "v3.3.4": {
       "extra_env": {
-        "PACKAGE_NAME": "v3.7.1.zip",
-        "PACKAGE_NAME2": "3.7",
-        "PACKAGE_SUB_DIR": "lapack-3.7.1",
-        "PACKAGE_SUB_DIR1": "lapack-3.7.1",
-        "FILE_EXT_VER" : "371"
+        "PACKAGE_NAME": "v3.3.4.zip",
+        "PACKAGE_NAME2": "3.3",
+        "PACKAGE_SUB_DIR": "eigen-3.3.4",
+        "PACKAGE_SUB_DIR1": "eigen-3.3.4",
+        "FILE_EXT_VER" : "334"
       },
       "extra_customize": {
-        "version": "3.7.1"
-      }
+        "version": "3.3.4"
+      },
+      "extra_tags": [
+        "v3.3.4",
+        "v3.3",
+        "v3"
+      ]
     }
   }
 }
