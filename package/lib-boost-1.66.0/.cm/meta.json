@@ -122,6 +122,7 @@
       }
     },
     "from-sourceforge": {
+      "on_by_default":"yes",    
       "extra_env": {
         "PACKAGE_UNZIP": "NO",
         "PACKAGE_UNBZIP": "YES",
